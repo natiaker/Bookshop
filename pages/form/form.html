@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delivery Form</title>
+    <link rel="stylesheet" href="formstyle.css">
+</head>
+<body onload='document.form1.text1.focus()'>
+    <main>
+        <div class="container">
+            <h1 id="title">Fill in Delivery Form</h1>
+            <p id="subtitle">Make your life colorful with books!</p>
+            <form action="" id="survey-form" target="_blank" name="myForm">
+                <label for="name" id="name-label">Name <span class="mandatory-sign">*</span></label><br>
+                <input type="text" name="name" placeholder="Enter your name" id="name" minlength="4" onclick="allLetter(document.form1.text1)" required><br>
+        
+                <label for="surname" id="surname-label">Surname <span class="mandatory-sign">*</span></label><br>
+                <input type="text" name="surname" placeholder="Enter your Surname" id="surname" required><br>
+
+                <label for="date" id="date">Delivery Date <span class="mandatory-sign">*</span></label><br>
+                <input type="datetime-local" id="date" name="date"><br>
+
+                <label for="street" id="street-label">Street <span class="mandatory-sign">*</span></label><br>
+                <input type="text" name="street" id="street" placeholder="Enter your Street" required><br>
+
+                <label for="house" id="house-label">House number <span class="mandatory-sign">*</span></label><br>
+                <input type="number" name="house" id="house" min="0" max="Infinity" placeholder="Enter your House number" required><br>
+
+                <label for="flat" id="flat-label">Flat number <span class="mandatory-sign">*</span></label><br>
+                <input type="number" name="flat" id="flat" min="0" max="Infinity" placeholder="Enter your Flat number" required><br>
+
+                <div class="payment">
+                    <p>Choose the payment type <span class="mandatory-sign">*</span> : </p>
+                    <label>
+                        <input type="radio" name="payment"
+                        id="cash" value="cash">
+                        Cash
+                    </label> <br>
+                    <label>
+                        <input type="radio" name="payment" 
+                        id="card"
+                        value="card">
+                        Card
+                    </label>
+                </div>
+        
+                <div class="gifts">
+                    <p>Choose 2 gifts:</p>
+                    <label>
+                        <input type="checkbox" name="prefer" value="pack">
+                        Pack as a gift
+                    </label> <br>
+                    <label>
+                        <input type="checkbox" name="prefer" value="postcard">
+                        Add postcard
+                    </label> <br>
+                    <label>
+                        <input type="checkbox" name="prefer" value="discount">
+                        Provide 2% discount to the next time,
+                    </label> <br>
+                    <label>
+                        <input type="checkbox" name="prefer" value="pen">
+                        Branded pen or pencil
+                    </label>
+                </div>
+                <button type="submit" id="submit" >Submit</button>
+            </form>
+        </div>
+    </main>
+    <script src="form.js"></script>
+</body>
+</html>

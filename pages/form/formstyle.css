@@ -78,7 +78,7 @@ input {
     margin-bottom: 15px;
 }
 
-#name, #surname, #date, #street, #house, #flat{
+#fname, #surname, #date, #street, #house, #flat{
     width: 100%;
 }
 
@@ -88,6 +88,15 @@ input {
 }
 
 #submit {
+    width: 40%;
+    margin: 20px auto;
+    padding: 10px 50px;
+    border: none;
+    border-radius: 5px;
+    font-size: 17px;
+    transition-duration: 500ms;
+}
+#submit{
     width: 40%;
     background-color:#202124;
     color: #fd9207;
@@ -104,7 +113,8 @@ input {
     color: white;
 }
 
-.container input:focus {
-    border: 2px solid #f2796e;
-  }
+#fname-error, #surname-error, #street-error, #date-error, #house-error, #flat-error, #checkbox-error, #submit-error{
+    color: #fd9207;
+    font-size: 15px;
+}
 

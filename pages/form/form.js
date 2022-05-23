@@ -79,7 +79,7 @@ function flatValidation() {
     let format = /^[1-9–]+[-0-9–]*$/;
     if(flat != '') {    
         if( !flat.match(format)){
-          document.getElementById("flat-error").innerHTML = "You can't such symbols";
+          document.getElementById("flat-error").innerHTML = "You can't use such symbols";
           document.getElementById("flat").style.border = "2px solid #fd9207";
           return false;
         }else{

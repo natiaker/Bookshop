@@ -10,33 +10,35 @@
 <body>
     <main>
         <div class="container">
-            <h1 id="title">Fill in Delivery Form</h1>
+            <h1 id="title">Delivery Form</h1>
             <p id="subtitle">Make your life colorful with books!</p>
-            <form action="" id="survey-form" name="myForm"   >
+            <div id="summaryInfo"></div>
+            <div id="backToMain"></div>
+            <form action="" method="post" id="myForm" name="myForm" onchange="return validateForm()" onsubmit = "return summarizeInfo(event)">
                 <label for="fname" id="name-label">Name <span class="mandatory-sign">*</span></label> 
                 <span id="fname-error"></span> <br>
-                <input type="text" name="fname" placeholder="Enter your name" id="fname" class="myInputField" onChange="return nameValidation()" required>
+                <input type="text" name="fname" placeholder="Enter your name" id="fname" class="myInputField" onfocusout="return nameValidation()" required>
                 
                 <label for="surname" id="surname-label">Surname <span class="mandatory-sign">*</span></label>
                 <span id="surname-error"></span><br>
-                <input type="text" name="surname" placeholder="Enter your Surname" class="myInputField" id="surname" onchange="return surnameValidation()" required>
+                <input type="text" name="surname" placeholder="Enter your Surname" class="myInputField" id="surname" onfocusout="return surnameValidation()" required>
 
-                <label for="date" id="date">Delivery Date <span class="mandatory-sign">*</span></label>
+                <label for="date" id="date-label">Delivery Date <span class="mandatory-sign">*</span></label>
                 <span id="date-error"></span><br>
                 <input type="date" id="date" class="myInputField" name="date" required><br>
 
                 <label for="street" id="street-label">Street <span class="mandatory-sign">*</span></label>
                 <span id="street-error"></span><br>
-                <input type="text" name="street" id="street" placeholder="Enter your Street" class="myInputField" onchange="return streetValidation()" required><br>
+                <input type="text" name="street" id="street" placeholder="Enter your Street" class="myInputField" onfocusout="return streetValidation()" required><br>
 
                 <label for="house" id="house-label">House number <span class="mandatory-sign">*</span></label>
                 <span id="house-error"></span><br>
-                <input type="number" name="house" id="house" placeholder="Enter your House number" class="myInputField" onchange="return houseValidation()" required><br>
+                <input type="text" name="house" id="house" placeholder="Enter your House number" class="myInputField" onfocusout="return houseValidation()" required><br>
 
                 <label for="flat" id="flat-label">Flat number <span class="mandatory-sign">*</span></label>
                 <span id="flat-error"></span><br>
-                <input type="number" name="flat" id="flat" class="myInputField"
-                placeholder="Enter your Flat number" onchange="return flatValidation()" required><br>
+                <input type="text" name="flat" id="flat" class="myInputField"
+                placeholder="Enter your Flat number" onfocusout="return flatValidation()" required><br>
 
                 <div class="payment">
                     <p>Choose the payment type <span class="mandatory-sign">*</span> : </p>
@@ -57,24 +59,23 @@
                     <p style="display:inline-block">Choose 2 gifts:</p> 
                     <span id="checkbox-error"></span> <br>
                     <label>
-                        <input type="checkbox" name="prefer" value="pack" class="checked"> 
+                        <input type="checkbox" name="prefer" value="Pack as a gift" class="checked"> 
                         Pack as a gift
                     </label> <br>
                     <label>
-                        <input type="checkbox" name="prefer" value="postcard" class="checked">
+                        <input type="checkbox" name="prefer" value="Postcard" class="checked">
                         Add postcard
                     </label> <br>
                     <label>
-                        <input type="checkbox" name="prefer" value="discount" class="checked">
+                        <input type="checkbox" name="prefer" value="2% discount to the next time" class="checked">
                         Provide 2% discount to the next time,
                     </label> <br>
                     <label>
-                        <input type="checkbox" name="prefer" value="pen" class="checked">
+                        <input type="checkbox" name="prefer" value="Branded pen or pencil" class="checked">
                         Branded pen or pencil
                     </label>
                 </div>
-                <button type="submit" id="submit" > Submit</button><br>
-                <span id="submit-error"></span> 
+                <button type="submit" id="submit" value="submit">Submit</button><br>
             </form>
         </div>
     </main>

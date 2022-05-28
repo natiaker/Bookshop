@@ -1,3 +1,6 @@
+const body = document.querySelector('body');
+const fragment = document.createDocumentFragment();
+
 //create header
 const header = document.createElement('HEADER');
 const h1 = document.createElement("H1");
@@ -5,7 +8,8 @@ const txt = document.createTextNode("BOOKSHOP");
 const logo = document.createElement('IMG'); 
 logo.classList = "logo";
 logo.src = "../../assets/icons/icons8-open-book.gif";
-document.body.appendChild(header);
+
+fragment.appendChild(header);
 h1.appendChild(txt);
 header.appendChild(logo);
 header.appendChild(h1);
@@ -99,14 +103,15 @@ fetch('./books.json')
                 duplicateAuthor.after(duplicateTitle);
                 duplicateTitle.after(duplicatePrice);
 
-                
                 totalPrice += price;
                 total.innerHTML = `Total Price: $ ${totalPrice}`;
             }) 
 
             const modal = document.createElement("DIV");
             modal.classList = "modal";
-            document.body.appendChild(modal);
+            fragment.appendChild(modal);
+            body.appendChild(fragment);
+
 
             const cross = document.createElement('SPAN');
             cross.classList = "closeModal";
@@ -160,6 +165,3 @@ orderButton.setAttribute("onclick", "visitForm();");
 function visitForm(){
     window.location.href = '../form/form.html';
 }
-
-
-

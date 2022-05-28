@@ -98,17 +98,19 @@ input {
 }
 #submit{
     width: 40%;
-    background-color:#202124;
-    color: #fd9207;
     margin: 20px auto;
     padding: 10px 50px;
     border: none;
     border-radius: 5px;
-    cursor: pointer;
     font-size: 17px;
     transition-duration: 500ms;
 }
-#submit:hover {
+.submit-style{
+    background-color:#202124;
+    color: #fd9207;
+    cursor: pointer;
+}
+.submit-style:hover {
     background-color: #69c500;
     color: white;
 }
@@ -118,3 +120,27 @@ input {
     font-size: 15px;
 }
 
+.summaryInfo-style {
+    color: white;
+    background-color: #202124;
+    border-radius: 20px;
+    padding: 30px;
+}
+
+a {
+    text-decoration: none;
+    color: #202124;
+}
+
+.backToMain-style {
+    text-align: center;
+    width: 30%;
+    background-color: #fd9207;
+    color: #202124;
+    margin: 20px auto;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    font-size: 25px;
+} 

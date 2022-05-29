@@ -70,10 +70,28 @@ fetch('./books.json')
             bookPrice.innerHTML = `Price: $ ${book.price}`;
             descriptionButton.innerHTML = "Show More";
             addButton.innerHTML = "Add to Cart";
- 
+            
+            //drag-and-drop
+            bookDiv.setAttribute("draggable","true"); 
+            bookDiv.addEventListener("dragstart",drag);
+            cart.addEventListener("drop",drop);
+            cart.addEventListener("dragover",allowDrop);
 
+            function allowDrop(ev) {
+                ev.preventDefault();
+            }  
+            function drag(ev) {
+                ev.dataTransfer.setData("card", ev.target.id);
+            } 
+            function drop(ev) {
+                bookDiv.addEventListener("dragend",addToCart) 
+            }
+            
+            //add to cart button
             let price = book.price; 
-            addButton.addEventListener("click",() => {
+            addButton.addEventListener("click",addToCart);
+
+            function addToCart() {
                 const bookCart = document.createElement('DIV');
                 const duplicateCover = bookCover.cloneNode(true);
                 const duplicateTitle = bookHeading.cloneNode(true);
@@ -105,8 +123,7 @@ fetch('./books.json')
 
                 totalPrice += price;
                 total.innerHTML = `Total Price: $ ${totalPrice}`;
-            }) 
-
+            }
             const modal = document.createElement("DIV");
             modal.classList = "modal";
             fragment.appendChild(modal);
